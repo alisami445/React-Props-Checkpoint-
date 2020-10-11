@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+
 const Prof = props => {
   return (
   <>
   <h1>NAME : {props.fullName}</h1>
   <h2>BIO  : {props.bio} </h2>
   <h3>PROFESSION :{props.profession}</h3>
+  <img src={props.children}/>
+  <button onClick={() =>props.handleName(props.fullName)}>
+      ALERT
+    </button>
   </>
   );
 
 }
-
-export default Prof
 Prof.propTypes ={
   fullName: PropTypes.string,
   bio: PropTypes.string,
@@ -22,6 +26,8 @@ Prof.defaultProps ={
   profession:"Python html css javascript unity",
   bio:"hello evreyone",
 }
+export default Prof
+
 
 
 
